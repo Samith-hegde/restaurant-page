@@ -2,6 +2,7 @@ import pasta from "./images/pasta.jpg";
 
 function createHome() {
     const home = document.createElement('div');
+    home.classList.add('home');
 
     const h1 = document.createElement('h1');
     h1.textContent = 'Welcome to [Restaurant Name]: A Taste of Perfection';

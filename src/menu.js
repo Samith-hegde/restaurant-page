@@ -1,8 +1,12 @@
+import { mainCourses } from './mainCourses';
+import { desserts } from './desserts';
+
 function createMenu() {
     const menu = document.createElement('div');
     menu.classList.add('menu');
     
-    const menuItems = ['Appetizers', 'Main Courses', 'Desserts', 'Beverages'];
+    const menuItems = ['Main Courses', 'Desserts'];
+
     menuItems.forEach(item => {
         const menuItem = document.createElement('button');
         menuItem.textContent = item;
@@ -12,4 +16,4 @@ function createMenu() {
     return menu;
 }
 
-export { createMenu };
+export { createMenu, mainCourses, desserts };

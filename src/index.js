@@ -1,13 +1,36 @@
 import { createHome } from './home';
-import { createMenu } from './menu';
+import { createMenu, mainCourses, desserts } from './menu';
 import { createContact } from './contact';
 import './styles.css';
+import './menu.css'
+import './home.css'
+import './contact.css'
 
 const content = document.getElementById('content');
 
 function createDisplayController(parameter) {
     content.innerHTML = '';
     content.appendChild(parameter);
+
+    if (content.firstChild.classList.contains('menu')) {
+        const menu = content.firstChild;
+
+        const menuButtons = menu.querySelectorAll('button');   
+
+        menuButtons.forEach(item => {
+            item.addEventListener('click', () => {
+                const existingItems = menu.querySelector('.menu-items');
+                if (existingItems) {
+                    menu.removeChild(existingItems);
+                }
+                if (item.textContent === 'Main Courses') {
+                    menu.appendChild(mainCourses());
+                } else if (item.textContent === 'Desserts') {
+                    menu.appendChild(desserts());
+                }
+            });
+        });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
