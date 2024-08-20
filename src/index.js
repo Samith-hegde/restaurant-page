@@ -1,10 +1,10 @@
 import { createHome } from './home';
 import { createMenu, mainCourses, desserts } from './menu';
 import { createContact } from './contact';
-import './styles.css';
-import './menu.css'
-import './home.css'
-import './contact.css'
+import './styling/styles.css';
+import './styling/menu.css'
+import './styling/home.css'
+import './styling/contact.css'
 
 const content = document.getElementById('content');
 
